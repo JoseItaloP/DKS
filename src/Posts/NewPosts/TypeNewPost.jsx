@@ -13,16 +13,16 @@ const NewPost = () => {
     evt.preventDefault();
     switch (selected) {
       case "ResumoDeSistemas":
-        Navigate("/Post/NewPost/NewResume");
+        Navigate("/DKS/NewPost/NewResume");
         break;
       case "Debates":
-        Navigate("/Post/NewPost/NewDebate");
+        Navigate("/DKS/NewPost/NewDebate");
         break;
       case "Regrasdesistemas":
-        Navigate("/Post/NewPost/NewRule");
+        Navigate("/DKS/NewPost/NewRule");
         break;
       case "PostsGerais":
-        Navigate("/Post/NewPost/NewGeneral");
+        Navigate("/DKS/NewPost/NewGeneral");
         break;
       default:
         return alert(

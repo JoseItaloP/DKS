@@ -12,10 +12,10 @@ const Aside = () => {
     <aside className={`${styles.all} scaleUpVerTop`}>
       <div className={`${show ? styles.body : styles.num} scaleUpVerTop`}>
         <ul className={styles.list}>
-          <li onClick={()=>navigate("/Post/ResumeSystemPost")}>Resumo de sistemas</li>
-          <li onClick={()=>navigate("/Post/DebatePost")}>Debates</li>
-          <li onClick={()=>navigate("/Post/RulePost")}>Regras de sistemas</li>
-          <li onClick={()=>navigate("/Post/GeneralPost")}>Posts gerais</li>
+          <li onClick={()=>navigate("/DKS/Post/ResumeSystemPost")}>Resumo de sistemas</li>
+          <li onClick={()=>navigate("/DKS/Post/DebatePost")}>Debates</li>
+          <li onClick={()=>navigate("/DKS/Post/RulePost")}>Regras de sistemas</li>
+          <li onClick={()=>navigate("/DKS/Post/GeneralPost")}>Posts gerais</li>
         </ul>
       </div>
       <button className={styles.butt} onClick={()=>setShow(!show)}>{show ?<IoMdArrowDropupCircle/> : <IoMdArrowDropdownCircle />}</button>

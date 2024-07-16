@@ -22,15 +22,13 @@ function App() {
           <Aside/>
           
           <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='Post/*' element={<Post/>}/>
-            <Route path='CriarConta/' element={<Registrate/>} />
+            <Route path='/DKS/' element={<Home/>}/>
+            <Route path='/DKS/Post/*' element={<Post/>}/>
+            <Route path='/DKS/CriarConta/' element={<Registrate/>} />
             <Route path="/*" element={<Edit />} />
             <Route path='*' element={<NotFound/>}/>
           </Routes>
         </main>
-
-        <Footer />
       </BrowserRouter>
     </>
   )

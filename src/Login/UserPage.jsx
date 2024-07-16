@@ -7,11 +7,13 @@ import Button from "../Elements/Button";
 import FileInput from "../Elements/FileInput";
 
 import styles from "./styles/UserPage.module.css";
+import { useNavigate } from "react-router-dom";
 
 const UserPage = ({ status }) => {
   const [show, setShow] = React.useState(status);
   const [confirm, setConfirm] = React.useState(false);
   const newUserName = useLogin();
+  const navigate = useNavigate()
   useLogin.valor = status;
   const {
     user,
@@ -54,7 +56,7 @@ const UserPage = ({ status }) => {
 
   function Deslogar() {
     localStorage.removeItem("Logged");
-    location.reload();
+    navigate('/DKS/')
   }
 
   return (

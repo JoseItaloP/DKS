@@ -1,4 +1,4 @@
-.body{
+.footer{
     background-color: var(--DarkGrey);
     color: var(--White);
     width: calc(100% - 40px);
@@ -9,17 +9,17 @@
 }
 
 
-.body > ul > li{
+.footer > ul > li{
     list-style: none;
 }
 
-.body > ul > li > a{
+.footer > ul > li > a{
     text-decoration: none;
     font-weight: 600;
     transition: 0.6;
     color:#990100;
 }
 
-.body > ul > li > a:hover{
+.footer > ul > li > a:hover{
     color: #e8e8e8;
 }

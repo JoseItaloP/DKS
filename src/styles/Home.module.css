@@ -59,6 +59,32 @@
     color: var(--White)
 }
 
+.footer{
+    background-color: var(--DarkGrey);
+    color: var(--White);
+    width: calc(100% - 40px);
+    height: 70px;
+    padding: 20px;
+
+    text-align: center;
+}
+
+
+.footer > ul > li{
+    list-style: none;
+}
+
+.footer > ul > li > a{
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.6;
+    color:#990100;
+}
+
+.footer > ul > li > a:hover{
+    color: #e8e8e8;
+}
+
 @media screen and (max-width: 1800px) {
     .TipSis{
         grid-template-columns: repeat(2, 1fr);

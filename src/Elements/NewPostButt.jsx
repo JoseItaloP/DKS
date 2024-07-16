@@ -6,7 +6,7 @@ const NewPostButt = ({children}) => {
     const navigate = useNavigate();
   
     function NewPost() {
-      navigate("/Post/NewPost");
+      navigate("/DKS/Post/NewPost");
     }
   
     return (

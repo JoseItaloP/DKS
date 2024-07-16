@@ -11,10 +11,10 @@ function Edit() {
     return (
         <>
             <Routes>
-                <Route path='/ResumeSystemPost/editResulme/:id' element={<EditResulme />} />
-                <Route path='/DebatePost/editDebate/:id' element={<EditDebate />} />
-                <Route path='/RulePost/editRule/:id' element={<EditRule />} />
-                <Route path='/GeneralPost/editGeneral/:id' element={<EditGeneral/>} />
+                <Route path='ResumeSystemPost/editResulme/:id' element={<EditResulme />} />
+                <Route path='DebatePost/editDebate/:id' element={<EditDebate />} />
+                <Route path='RulePost/editRule/:id' element={<EditRule />} />
+                <Route path='GeneralPost/editGeneral/:id' element={<EditGeneral/>} />
             </Routes>
 
         </>

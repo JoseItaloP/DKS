@@ -47,7 +47,7 @@ const Enter = ({ status }) => {
               <Button> Entrar </Button>
               <Link
                 className={styles.Link}
-                to="/CriarConta"
+                to="/DKS/CriarConta"
                 onClick={() => setShow(false)}
               >
                 Cadastre-se Aqui

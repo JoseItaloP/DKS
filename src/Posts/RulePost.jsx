@@ -81,7 +81,7 @@ const RulePost = () => {
             discussões maiores sobre regras de sistemas próprios, use os{" "}
             <strong
               className="strong clicabo"
-              onClick={() => navigate("/Post/GeneralPost")}
+              onClick={() => navigate("/DKS/Post/GeneralPost")}
             >
               Posts Gerais
             </strong>{" "}

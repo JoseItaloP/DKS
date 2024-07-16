@@ -5,9 +5,6 @@ import { useNavigate } from "react-router-dom";
 const useNewPost = () => {
   const navigate = useNavigate();
   const [NewPost, setNewPost] = useState(null);
-  const GeneralPost = [];
-  const ResumePost = [];
-  const RulePost = [];
   const {
     CreatDebatePost,
     CreatGeneralPost,
@@ -17,7 +14,7 @@ const useNewPost = () => {
   } = useFirebase();
 
   const nav = () => {
-    navigate("/");
+    navigate("/DKS");
   };
 
   const newElement = (value) => {
@@ -79,9 +76,6 @@ const useNewPost = () => {
 
   return {
     newElement,
-    GeneralPost,
-    ResumePost,
-    RulePost,
   };
 };
 

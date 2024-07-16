@@ -31,7 +31,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.logoName}>
         <img src={Logo} alt="DKF Logo" />
-        <h1 className={styles.tittle} onClick={()=>navigate("/")}><strong>D</strong>o you know a system?</h1>
+        <h1 className={styles.tittle} onClick={()=>navigate("/DKS")}><strong>D</strong>o you know a system?</h1>
       </div>
       <div className={styles.login}>
          {user.map((element)=>{

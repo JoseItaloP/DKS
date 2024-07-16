@@ -101,9 +101,6 @@ const NewResume = () => {
   async function hamdleSubmit(evt) {
     evt.preventDefault();
 
-    if (show) {
-      return alert("Aguarde o carregamento completo da imagem");
-    }
     if (
       !value.TituloP |
       !value.ResumeTxT |
