@@ -1,0 +1,339 @@
+.BackDiv {
+  /* animation: _scaleUp_bqmu9_1 0.3s forwards; */
+
+  background-color: var(--White);
+  height: 85vh;
+  width: 65vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-49%, -50%);
+  position: absolute;
+  z-index: 1000;
+}
+
+.TransformeDiv {
+  padding: 25px 25px 0px 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  white-space: pre-wrap;
+  text-overflow: clip;
+  overflow: overlay;
+}
+
+.TopSec {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.TopSec > h1 {
+  font-size: 1.5em;
+}
+
+.NameIndcation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.NameIndcation > p {
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.BodyDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.BodySec {
+  min-width: 100%;
+  margin-bottom: 10px;
+}
+
+.imgSide > img {
+  min-width: 300px;
+  max-height: 100%;
+  max-width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.topOne {
+  display: flex;
+  min-width: 100%;
+  height: 10px;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.topOne > svg {
+  height: 20px;
+  width: 20px;
+  color: var(--DarkGrey);
+}
+
+.topOne > svg:hover {
+  cursor: pointer;
+}
+
+.BackComents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+
+  box-shadow: 0px -10px 10px 0px #00000026;
+}
+
+.Buttao {
+  border: 0px solid;
+  padding: 15px;
+  width: 100%;
+
+  background-color: var(--White);
+  color: var(--Red01);
+
+  transition: 0.5s;
+}
+
+.RedButtao {
+  border: 0px solid;
+  padding: 15px;
+  width: 100%;
+
+  background-color: var(--Red01);
+  color: var(--White);
+
+  transition: 0.5s;
+}
+
+.Buttao:hover {
+  background-color: var(--Red01);
+  color: var(--White);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.RedButtao:hover {
+  cursor: pointer;
+  background-color: var(--White);
+  color: var(--Red01);
+  transition: 0.5s;
+}
+
+.ComentsBox {
+  width: 95%;
+  height: 60vh;
+  z-index: 2000;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Coments {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  white-space: pre-wrap;
+  text-overflow: clip;
+  overflow: overlay;
+}
+
+.newComent {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.newComent > textarea {
+  width: 100%;
+  padding: 5px;
+  border: 0px;
+}
+
+.Coment {
+  padding: 25px;
+  margin-top: 15px;
+  margin-right: 5px;
+  background-color: var(--WhiteGrey);
+
+  border-radius: 5px 5px 10px 5px;
+}
+
+.Coment > p {
+  font-size: 0.8em;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.Coment > h5 {
+  color: var(--Red01);
+}
+
+.DivNC {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.EditB {
+  color: var(--Red01);
+  font-size: 0.8em;
+}
+
+.EditB:hover {
+  cursor: pointer;
+  color: var(--DarkGrey);
+  text-decoration: underline;
+}
+
+.EditComent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.EditComent > textarea {
+  max-width: 100%;
+  padding: 2px;
+  border: 0px;
+}
+
+.EditComent > button {
+  margin-top: 5px;
+  padding: 5px;
+
+  font-size: 1.2em;
+  border: 0;
+  background-color: var(--DarkGrey);
+  color: var(--White);
+}
+
+.EditComent > button:hover {
+  cursor: pointer;
+  background-color: var(--White);
+  color: var(--DarkGrey);
+}
+
+.navBtn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+  display: none;
+}
+
+.NavDivider {
+  display: flex;
+  width: 150px;
+  justify-content: space-evenly;
+
+  color: var(--Red01);
+}
+
+.NavDivider {
+  list-style: none;
+}
+
+.NavDivider > li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--DarkGrey);
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+  .navBtn {
+    visibility: visible;
+    opacity: 1;
+    display: contents;
+  }
+
+  .NavItSelf {
+    position: fixed;
+    right: 60px;
+    top: 50px;
+    box-shadow: 5px 5px 10px #0000002b;
+    border-radius: 10px 0px 10px 10px;
+    height: 60px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+    background-color: var(--White);
+
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .NavCloseBtn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .responsiveBar {
+    visibility: visible;
+    opacity: 1;
+    animation: responsiveBar 0.3s alternate both;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .BackDiv {
+    width: 100%;
+    height: 100%;
+  }
+
+  .BodyDiv {
+    margin: 20px 0px 0px 0px;
+    height: 95%;
+  }
+
+  .imgSide > img {
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  
+
+}
+
+@keyframes responsiveBar {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+

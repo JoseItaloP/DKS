@@ -1,0 +1,28 @@
+.divObject{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.divPass > input{
+    font-size: 1.2em;
+    width: 100%;
+    padding: 10px 10px 10px 0px;
+}
+
+.PasswordToggle{
+    position: absolute;
+    margin-right: 10px;
+}
+
+.PasswordToggle > svg{
+    color: #33333378;
+    width: 20px;
+    height: 20px;
+}
+
+.divPass{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

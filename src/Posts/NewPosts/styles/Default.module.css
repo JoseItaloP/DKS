@@ -1,0 +1,100 @@
+.body{
+    
+    background-color: var(--DarkGrey);
+    padding: 25px;
+    border-radius: 15px;
+    /* min-height: 50px; */
+    /* max-height: 100vh; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 2%);
+    position: sticky;
+
+    margin-bottom: 50px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 608px;
+}
+
+.form > div {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 10px 0px;
+
+    min-width: 530px;
+}
+
+.form > div > label{
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.form > div > input{
+    font-size: 1.1em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+    border: 0;
+    background-color: var(--WhiteGrey);
+    color: var(--DarkGrey);
+}
+
+.form > textarea{
+    margin-bottom: 5px;
+    padding: 5px 0px 0px 10px;
+    text-indent: 15px;
+    font-size: 1.1em;
+    border: 0;
+    background-color: var(--WhiteGrey);
+    color: var(--DarkGrey);
+}
+
+.form > ul{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 20px 0 0;
+}
+
+.form > ul > li{
+    list-style: none;
+    margin: 10px 5px 10px 5px;
+}
+
+.form > ul > li > label > input{
+    margin-right: 5px;
+}
+
+.selec {
+    background-color: var(--Red02);    
+    color: var(--White);
+    font-weight: 700;
+    font-size: 1.2em;
+    border: 0px;
+    border-radius: 15px 15px 0px 0px;
+    width: 200px;
+    padding-top: 3px;
+    text-align: center;
+}
+
+.colorDefault{
+    color: white;
+}
+
+@media screen and (max-width: 1200px){
+    form > ul{
+        flex-direction: column!important;
+        margin: 15px 15px 0 40px;
+        
+        align-items: flex-start;
+    }
+}
+@media screen and (max-width: 650px){
+    .body{
+        width: 70vw;
+    }
+
+}

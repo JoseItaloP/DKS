@@ -1,0 +1,85 @@
+.back{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.337);
+}
+
+.center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 1000;
+
+    background-color: var(--DarkGrey);
+    padding: 20px;
+    border: 1px solid var(--White);
+    border-radius: 15px;
+}
+
+.topDiv{
+    display: flex;
+    margin: 5px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topDiv > svg{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.Uper{
+    text-transform: capitalize;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+}
+
+.formElement{
+    display: flex;
+    align-items: center;
+}
+.formElement > button {
+    margin-left: 10px;
+}
+
+.CancelBtt{
+    margin-top: 10px!important;
+    transition: 0.5s;
+}
+
+.CancelBtt:hover{
+    color: var(--Red02);
+    border: 1px solid var(--Red02);
+    background-color: var(--White);
+}
+
+.DeslogButt{
+    margin-top: 15px;
+}
+
+.progressBar{
+    margin-bottom: 5px;
+}
+
+.InputText{
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .formElement{
+        flex-direction: column;
+    }
+    .formElement > button {
+        margin-left: 0px;
+    }
+}
+

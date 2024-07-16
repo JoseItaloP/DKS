@@ -1,0 +1,87 @@
+.all{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-right: -60px;
+    background-color: var(--DarkGrey);
+    border-radius: 0px 0px 15px 15px;
+}
+
+.body{
+    background-color: var(--DarkGrey);
+    width: 170px;
+    height: 105px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    margin-top: 0;
+}
+
+.num{
+    opacity: 0;
+    z-index: 1;
+    margin-top: -92px;
+}
+
+.list{
+    list-style: none;
+}
+
+.list > li{
+    
+    cursor: pointer;
+    margin-top: 5px;
+    color: var(--White);
+    position: relative;
+}
+li > a{
+    text-decoration: none;
+}
+.list > li a{
+    text-decoration: none;
+}
+
+.list >li::after{
+    content: " ";
+    width: 0%;
+    height: 1px;
+    background-color: var(--Red02);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    transition: 0.5s ease-in-out
+}
+
+.list >li:hover::after{
+    width: 100%;
+}
+
+.butt{
+    border: 0px;
+    height: 25px;
+
+    border-radius: 0px 0px 10px 10px;
+
+    width: 170px;
+    background-color: var(--Red02);
+    color: var(--DarkGrey);
+}
+
+.butt > svg{
+    width: 20px;
+    height: 20px;
+}
+
+.butt:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    .all{
+        position: absolute;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}

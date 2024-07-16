@@ -1,0 +1,28 @@
+.corpo{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: -50px;
+}
+
+
+.corpo > img{
+    width: 100%;
+}
+
+@media screen and (max-width: 1000px){
+    .corpo > img{
+        height: 75%;
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .corpo > img{
+        height: 65%;
+        width: 65%;
+    }
+}

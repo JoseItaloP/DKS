@@ -1,0 +1,94 @@
+.header{
+   height: 8vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.146);
+    position: relative;
+    color: var(--WhiteGrey);
+    background-color: var(--DarkGrey);
+}
+
+.logoName{
+    display: flex;
+    align-items: center;
+}
+
+.logoName > h1{
+    margin-left: -30px;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+.logoName > h1 > strong{
+    color: var(--Red02);
+    font-size: 1.8em;
+}
+
+.logoName > img{
+    height: 80%;
+    margin-top: -12px;
+    margin-left: 15px;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+}
+
+.login > svg{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    color: var(--WhiteGrey);
+}
+
+.user{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.user > p {
+    color:var(--Red01);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.loggin:first-child{
+    color: var(--WhiteGrey);
+    transition: 0.2s;
+}
+
+.loggin:first-child:hover{
+    width: 100%;
+    color: var(--Red02);
+}
+
+.imagePerfil{
+    border-radius: 50%;
+    margin-right: 3px;
+    width: 32px;
+    height: 32px;
+}
+
+@media screen and (max-width:800px){
+    .logoName > h1{
+        font-size:1.5em
+    }
+}
+
+@media screen and (max-width:450px){
+    .logoName > h1{
+        font-size:1.0em
+    }
+
+    .logoName > img{
+        height: 65%;
+        margin-top: -12px;
+        margin-right: 10px
+    }
+}

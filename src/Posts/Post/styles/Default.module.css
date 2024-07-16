@@ -1,0 +1,116 @@
+.BlockPost{
+    padding: 25px 10px 5px 10px;
+    background-color: var(--White);
+    border-radius: 15px 15px 0px 0px;
+    min-width: 221.594px;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 10px;
+}
+
+.BlockPost > section{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.BlockPost > section > h1{
+    max-width: 150px;
+    word-wrap: break-word;
+}
+
+.BlockPost > section > h5{
+    font-size: 0.7em;
+    margin-top: 3px;
+}
+
+
+.BlockPost > p{
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 100px;
+
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: pre-line;
+
+}
+
+.BlockPost > h3{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.Val16{
+    color: red;
+}
+
+.BlockPost:hover{
+    padding: 24px 9px 4px 9px;
+    border: 1px solid var(--Red02);
+    background-color: var(--DarkGrey);
+    color: var(--White);
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+.BackPostsGrid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 25px;
+}
+
+.divImg{
+    max-height: 150px;
+    
+    background-color: var(--DarkGrey);
+    overflow: hidden;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.divNonImg{
+    min-height: 150px;
+    
+    background-color: var(--DarkGrey);
+    overflow: hidden;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.ImgPost{
+    width: 100%;
+    height: 100%;
+}
+
+
+.modal{
+    position: fixed;
+    min-width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    right: 0;
+    background: rgba(0,0,0, .4);
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .BlockPost{
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .BlockPost{
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .BlockPost{
+        max-width: 300px;
+    }
+}

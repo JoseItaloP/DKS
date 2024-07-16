@@ -1,0 +1,16 @@
+.Bott{
+    color: var(--White);
+    background-color: var(--Red01);
+    border: 0;
+    border-radius: 5px;
+    padding: 20px 40px;
+    cursor: pointer;
+}
+
+.Bott:hover{
+    background-color: #de1414;
+}
+
+.Bott:active{
+    background-color: var(--Red01);
+}
