@@ -22,7 +22,7 @@ function App() {
           <Aside/>
           
           <Routes>
-            <Route path='/DKS/' element={<Home/>}/>
+            <Route path='/DKS' element={<Home/>}/>
             <Route path='/DKS/Post/*' element={<Post/>}/>
             <Route path='/DKS/CriarConta/' element={<Registrate/>} />
             <Route path="/*" element={<Edit />} />
