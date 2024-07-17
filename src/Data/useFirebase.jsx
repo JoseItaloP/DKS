@@ -56,12 +56,20 @@ const useFirebase = () => {
       if (element.name === username && element.password === password) {
         localStorage.removeItem("Logged");
         localStorage.setItem("Logged", element.id);
+        const log = localStorage.getItem("Logged")
+        setLogged(log)
       }
     });
+
+    if(Logged){
+      alert('Login feito com sucesso!')
+      location.reload()
+    }else{
+      alert('Login ou senha incorretas')
+    }
   }
 
   const GetUpdate = (Value) => setUpdate(Value);
-  // const AttComents = (cometns) => setComentsInUse(cometns);
 
   async function CreatUser(email, name, password) {
     let valueOut = "ok";

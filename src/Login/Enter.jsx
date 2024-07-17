@@ -15,9 +15,13 @@ const Enter = ({ status }) => {
   const { LoginUser } = useFirebase();
   useLogin.valor = status;
 
-  function hamdleSubmit() {
+  function hamdleSubmit(evt) {
+    evt.preventDefault()
     if (username.validate() && password.validate()) {
       LoginUser(username.value, password.value);
+    }
+    else{
+      alert('Preencha corretamente todos os campos como lhe é informado.')
     }
   }
 
