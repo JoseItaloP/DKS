@@ -7,13 +7,11 @@ import Button from "../Elements/Button";
 import FileInput from "../Elements/FileInput";
 
 import styles from "./styles/UserPage.module.css";
-import { useNavigate } from "react-router-dom";
 
 const UserPage = ({ status }) => {
   const [show, setShow] = React.useState(status);
   const [confirm, setConfirm] = React.useState(false);
   const newUserName = useLogin();
-  const navigate = useNavigate()
   useLogin.valor = status;
   const {
     user,
@@ -40,7 +38,7 @@ const UserPage = ({ status }) => {
         } else {
           setConfirm(true);
           if (!file) return;
-          if (file) NewPhoto(file);
+          if (file) NewPhoto(file, `${NameUser}_Profile`);
         }
       } else{
         return window.alert('É necessario uma imagem para prosseguir')
@@ -56,7 +54,7 @@ const UserPage = ({ status }) => {
 
   function Deslogar() {
     localStorage.removeItem("Logged");
-    navigate('/DKS/')
+    location.reload()
   }
 
   return (

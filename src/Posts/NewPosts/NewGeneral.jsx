@@ -3,25 +3,24 @@ import Input from "../../Elements/Input";
 import Button from "../../Elements/Button";
 import useNewPost from "../../Data/useNewPost";
 import useFirebase from "../../Data/useFirebase";
+import FileInput from "../../Elements/FileInput";
 
 import styles from "./styles/Default.module.css";
-import FileInput from "../../Elements/FileInput";
 
 const NewGeneral = () => {
 
-  const { progress, imgUrl, Logged, NewPhoto, CancelNewPhoto } = useFirebase();
+  const { progress, imgUrl, LocalId, Logged, NewPhoto, CancelNewPhoto } = useFirebase();
   const [value, setValue] = React.useState({
     Id: "NewGeneralPost",
     TituloP: "",
     GeneralTxT: "",
-    UserId: LocalS,
+    UserId: LocalId,
     UserName: "",
     ImgUrl: '',
   });
   const [erro, setErro] = React.useState("");
   const { newElement } = useNewPost();
   const [show, setShow] = React.useState(true)
-  const [imgFileUrl, setImgFileUrl] = React.useState('')
 
 
   useEffect(() => {
@@ -33,11 +32,17 @@ const NewGeneral = () => {
     }
   }, [Logged]);
 
-  useEffect(()=>{
-      if(imgUrl) {
-        setImgFileUrl(imgUrl)
-      }
-  }, [imgUrl])
+  useEffect(() => {
+    const callToValue = () => {
+      setValue((prevValue) => ({
+        ...prevValue,
+        ImgUrl: imgUrl,
+      }));
+    };
+    if (imgUrl) {
+      callToValue();
+    }
+  }, [imgUrl]);
 
   function hamdleChange({ target }) {
     const { id, value } = target;
@@ -55,10 +60,6 @@ const NewGeneral = () => {
     if (!Logged) {
       return alert("Faça login na página para continuar");
     }
-    setValue((prevValue) => ({
-      ...prevValue,
-      ImgUrl: imgFileUrl,
-    }));
     newElement(value);
   }
 
@@ -66,25 +67,28 @@ const NewGeneral = () => {
     evt.preventDefault()
     setShow(false)
 
-    const file = evt.target[0]?.files[0];
-    if (!file) return;
-    if (file) NewPhoto(file);
+    if (value.TituloP) {
+      const file = evt.target[0]?.files[0];
+      if (!file) return;
+      if (file) NewPhoto(file, `${value.TituloP}_${user.id}`);
+    } else {
+      window.alert("Preencha o titulo do post para proceguir");
+    }
     
   }
 
   function CancelIMG(){
     CancelNewPhoto();
     setShow(true);
-    setImgFileUrl('')
   }
 
   return (
     <>
-      <div className={styles.body}>
-        <h1 className="tittle">Novo Post Geral</h1>
+      <div className={`${styles.body} ${styles.body2}`}>
+        <h1 className={`tittle ${styles.colorDefault}`}>Novo Post Geral</h1>
           <div className="littleFlexCenter">
             <form className="littleFlexCenter" onSubmit={SendIMG}>
-              <FileInput label='Coloque uma imagem no post' Id={`General_Post_${imgUrl}`} name={imgUrl} />
+              <FileInput label='Coloque uma imagem no post' Id={`General_Post_${imgUrl}`} name={imgUrl} className={styles.colorDefault} />
               {!imgUrl && <progress value={progress} max="100" className='progressBar'/>}
               {imgUrl && <img src={imgUrl} alt={`${Logged}_Post_Photo`} className='ImagePost'/>}
               {show && <Button>Ver Imagem</Button>}
@@ -97,6 +101,7 @@ const NewGeneral = () => {
             type="text"
             name="TituloP"
             onChange={hamdleChange}
+            className={styles.colorDefault}
           />
           <textarea
             id="GeneralTxT"

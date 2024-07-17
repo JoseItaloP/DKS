@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <>
-      <div className={`body`}>
+      <div className={`body transition`}>
         <Head tittle="Home" />
         <section className={`sec littleFlexCenter`}>
           <h1 className="tittle">
@@ -24,7 +24,7 @@ const Home = () => {
           </h3>
         </section>
 
-        <section className={`${styles.gridDivde} sec`}>
+        <section className={`${styles.gridDivde} sec `}>
           <div>
             <h2>Qual o objetivo do site?</h2>
             <p>
@@ -89,10 +89,10 @@ const Home = () => {
           <p>Redes para contato:</p>
           <ul>
             <li>
-              <a href="www.linkedin.com/in/josé-italo">Linkedin</a>
+              <a href="https://www.linkedin.com/in/jos%C3%A9-italo/" target="_blank">Linkedin</a>
             </li>
             <li>
-              <a href="https://github.com/JoseItaloP">GitHub</a>
+              <a href="https://github.com/JoseItaloP" target="_blank">GitHub</a>
             </li>
           </ul>
         </footer>

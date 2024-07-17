@@ -78,7 +78,7 @@ const editDebate = () => {
       value.DebateTxT,
       id
     );
-    navigate("/Post/DebatePost");
+    navigate("/DKS/Post/DebatePost");
   };
 
   return (

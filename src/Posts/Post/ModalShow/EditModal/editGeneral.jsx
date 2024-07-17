@@ -26,7 +26,6 @@ const editGeneral = () => {
   const LocalS = localStorage.getItem("Logged");
   const [Logged, setLogged] = React.useState("");
   const [show, setShow] = React.useState(true);
-  const [urlDnv, setUrlDnv] = React.useState("");
   const [erro, setErro] = React.useState("");
   const [joditContent, setJoditContent] = React.useState("");
   const [value, setValue] = React.useState({
@@ -81,12 +80,11 @@ const editGeneral = () => {
         ...prevValue,
         ImgUrl: imgUrl,
       }));
-      if (urlDnv) setUrlDnv("");
     };
     if (imgUrl) {
       callToValue();
     }
-  }, [imgUrl, urlDnv]);
+  }, [imgUrl]);
 
   useEffect(() => {
     if (progress === 100) {
@@ -120,8 +118,12 @@ const editGeneral = () => {
     if (!Logged) {
       return alert("Faça login na página para continuar");
     }
+    setValue((prevValue) => ({
+      ...prevValue,
+      GeneralTxT: joditContent,
+    }));
     UpdateGeneralPost(value.TituloP, value.GeneralTxT,  value.ImgUrl, id);
-    navigate("/Post/GeneralPost");
+    navigate("/DKS/Post/GeneralPost");
   }
 
   function SendIMG(evt) {

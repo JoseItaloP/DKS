@@ -26,7 +26,6 @@ const editRule = () => {
   const LocalS = localStorage.getItem("Logged");
   const [Logged, setLogged] = React.useState("");
   const [show, setShow] = React.useState(true);
-  const [urlDnv, setUrlDnv] = React.useState("");
   const [erro, setErro] = React.useState("");
   const [joditContent, setJoditContent] = React.useState("");
   const [value, setValue] = React.useState({
@@ -84,12 +83,11 @@ const editRule = () => {
         ...prevValue,
         ImgUrl: imgUrl,
       }));
-      if (urlDnv) setUrlDnv("");
     };
     if (imgUrl) {
       callToValue();
     }
-  }, [imgUrl, urlDnv]);
+  }, [imgUrl]);
 
   useEffect(() => {
     if (progress === 100) {
@@ -123,8 +121,12 @@ const editRule = () => {
     if (!Logged) {
       return alert("Faça login na página para continuar");
     }
+    setValue((prevValue) => ({
+      ...prevValue,
+      RuleTxT: joditContent,
+    }));
     UpdateRulePost(value.TituloP, value.RuleTxT, value.SyR, value.ImgUrl, id);
-    navigate("/Post/RulePost");
+    navigate("/DKS/Post/RulePost");
   }
 
   function SendIMG(evt) {

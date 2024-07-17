@@ -14,7 +14,7 @@ const Post = () => {
             <Route path='/DebatePost' element={<DebatePost/>}/>
             <Route path='/GeneralPost' element={<GeneralPost/>}/>
             <Route path='/ResumeSystemPost' element={<ResumeSystemPost/>}/>
-            <Route path='/NewPost*' element={<NewPost />}/>
+            <Route path='/NewPost/*' element={<NewPost />}/>
             <Route path='/RulePost' element={<RulePost/>}/>
             <Route path="/*" element={<Edit />} />
         </Routes>

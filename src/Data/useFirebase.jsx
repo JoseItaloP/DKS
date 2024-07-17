@@ -105,6 +105,7 @@ const useFirebase = () => {
     ImgUrl,
     GeS
   ) {
+    console.log(ImgUrl, 'useFirebase')
     if (ImgUrl) {
       await addDoc(ResulmySystemColecctionRef, {
         TituloP,
@@ -135,6 +136,8 @@ const useFirebase = () => {
     UserId,
     ImgUrl
   ) {
+    console.log('Titulo',TituloP)
+    console.log('Texto',GeneralTxT)
     if (ImgUrl) {
       await addDoc(GeneralColecctionRef, {
         TituloP,
@@ -195,8 +198,8 @@ const useFirebase = () => {
     });
   }
 
-  async function NewPhoto(file) {
-    const storageRef = ref(storage, `images/${file.name}`);
+  async function NewPhoto(file, Name) {
+    const storageRef = ref(storage, `images/${Name}`);
     const uploadTask = uploadBytesResumable(storageRef, file);
     uploadTask.on(
       "state_changed",
@@ -285,6 +288,7 @@ const useFirebase = () => {
 
   async function UpdateGeneralPost(TituloP, GeneralTxT, ImgUrl, id) {
     const GeneralDoc = doc(Db, "General", id);
+    
     try {
       await updateDoc(GeneralDoc, {
         TituloP: TituloP,

@@ -11,10 +11,10 @@ const NewPost = () => {
     <>
       <Routes>
         <Route path="/" element={<TypeNewPost />} />
-        <Route path="/NewResume" element={<NewResume />} />
-        <Route path="/NewDebate" element={<NewDebate />} />
-        <Route path="/NewRule" element={<NewRule />} />
-        <Route path="/NewGeneral" element={<NewGeneral />} />
+        <Route path="NewResume" element={<NewResume />} />
+        <Route path="NewDebate" element={<NewDebate />} />
+        <Route path="NewRule" element={<NewRule />} />
+        <Route path="NewGeneral" element={<NewGeneral />} />
       </Routes>
     </>
   );

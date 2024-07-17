@@ -45,6 +45,7 @@ const useNewPost = () => {
           break;
 
         case "NewResumePost":
+          console.log(NewPost, 'UseNewPost')
           CreatResulmySystemPost(
             NewPost.TituloP,
             NewPost.ResumeTxT,

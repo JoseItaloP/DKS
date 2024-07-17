@@ -85,7 +85,6 @@ const editResulme = () => {
         ...prevValue,
         ImgUrl: imgUrl,
       }));
-      if (urlDnv) setUrlDnv("");
     };
     if (imgUrl) {
       callToValue();
@@ -142,7 +141,10 @@ const editResulme = () => {
     if (!Logged) {
       return alert("Faça login na página para continuar");
     }
-    setUrlDnv("1");
+    setValue((prevValue) => ({
+      ...prevValue,
+      ResumeTxT: joditContent,
+    }));
     UpdateResulmyPost(
       value.TituloP,
       value.ResumeTxT,
@@ -153,7 +155,7 @@ const editResulme = () => {
       value.GeS,
       id
     );
-    navigate("/Post/ResumeSystemPost");
+    navigate("/DKS/Post/ResumeSystemPost");
   }
   return (
     <>

@@ -9,7 +9,7 @@ const Aside = () => {
  const navigate = useNavigate()
 
   return (
-    <aside className={`${styles.all} scaleUpVerTop`}>
+    <aside className={`${styles.all} scaleUpVerTop transition`}>
       <div className={`${show ? styles.body : styles.num} scaleUpVerTop`}>
         <ul className={styles.list}>
           <li onClick={()=>navigate("/DKS/Post/ResumeSystemPost")}>Resumo de sistemas</li>

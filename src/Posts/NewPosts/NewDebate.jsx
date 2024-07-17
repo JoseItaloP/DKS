@@ -57,13 +57,14 @@ const NewDebate = () => {
   };
 
   return (
-    <div className={styles.body}>
-      <h1 className="tittle">Novo Post de Debate</h1>
+    <div className={`${styles.body} ${styles.body2}`}>
+      <h1 className={`tittle ${styles.colorDefault}`}>Novo Post de Debate</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input
           label="Titulo do Post"
           type="text"
           name="TituloP"
+          className={styles.colorDefault}
           onChange={handleChange}
         />
         <textarea

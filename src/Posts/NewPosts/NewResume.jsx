@@ -6,25 +6,22 @@ import useFirebase from "../../Data/useFirebase";
 import useNewPost from "../../Data/useNewPost";
 import JoditEditorText from "../../Elements/JoditEditorText";
 
-import styles from './styles/Default.module.css'
+import styles from "./styles/Default.module.css";
 
 const NewResume = () => {
-  const { imgUrl, user, progress, setProgress, NewPhoto, CancelNewPhoto } =
+  const { imgUrl, user,LocalId, progress, setProgress, NewPhoto, CancelNewPhoto } =
     useFirebase();
-  const LocalS = localStorage.getItem("Logged");
   const [Logged, setLogged] = React.useState("");
   const [joditContent, setJoditContent] = React.useState("");
   const [show, setShow] = React.useState(true);
   const [erro, setErro] = React.useState("");
-  const [imgFileUrl, setImgFileUrl] = React.useState("");
-  const [urlDnv, setUrlDnv] = React.useState("");
   const [value, setValue] = React.useState({
     Id: "NewResumePost",
     TituloP: "",
     ResumeTxT: "",
     CI: "",
     GeS: "",
-    UserId: LocalS,
+    UserId: LocalId,
     UserName: "",
     ImgUrl: "",
   });
@@ -32,10 +29,10 @@ const NewResume = () => {
 
   useEffect(() => {
     if (user) {
-      const foundUser = user.find((element) => element.id === LocalS);
+      const foundUser = user.find((element) => element.id === LocalId);
       if (foundUser) setLogged(foundUser.name);
     }
-  }, [user, LocalS]);
+  }, [user, LocalId]);
 
   useEffect(() => {
     if (Logged) {
@@ -46,19 +43,18 @@ const NewResume = () => {
     }
   }, [Logged]);
 
+
   useEffect(() => {
     const callToValue = () => {
-      setImgFileUrl(imgUrl);
       setValue((prevValue) => ({
         ...prevValue,
-        ImgUrl: imgFileUrl,
+        ImgUrl: imgUrl,
       }));
-      if (urlDnv) setUrlDnv("");
     };
     if (imgUrl) {
       callToValue();
     }
-  }, [imgUrl, urlDnv]);
+  }, [imgUrl]);
 
   useEffect(() => {
     if (joditContent) {
@@ -87,39 +83,37 @@ const NewResume = () => {
   function SendIMG(evt) {
     evt.preventDefault();
 
-    const file = evt.target[0]?.files[0];
-    if (!file) return;
-    if (file) NewPhoto(file);
+    if (Logged) {
+      if (value.TituloP) {
+        const file = evt.target[0]?.files[0];
+        if (!file) return;
+        if (file) NewPhoto(file, `${value.TituloP}_${LocalS}`);
+      } else {
+        window.alert("Preencha o titulo do post para proceguir");
+      }
+    } else {
+      window.alert("Faça login na pagina para continuar");
+    }
   }
 
   function CancelIMG() {
     CancelNewPhoto();
     setShow(true);
-    setImgFileUrl("");
   }
 
   async function hamdleSubmit(evt) {
     evt.preventDefault();
 
-    if (
-      !value.TituloP |
-      !value.ResumeTxT |
-      !value.CI |
-      !value.GeS |
-      value.ImgUrl
-    ) {
+    if (!value.TituloP | !value.ResumeTxT | !value.CI | !value.GeS) {
+      console.log(value);
       return setErro("Preencha todos os Campo");
     }
-    if (!Logged) {
-      return alert("Faça login na página para continuar");
-    }
-    setUrlDnv("1");
     newElement(value);
   }
 
   return (
     <>
-      <div className={styles.body}>
+      <div className={`${styles.body} ${styles.body2}`}>
         <h1 className={`tittle ${styles.colorDefault}`}>
           Novo Resumo de sistema
         </h1>

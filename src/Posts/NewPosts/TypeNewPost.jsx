@@ -13,16 +13,16 @@ const NewPost = () => {
     evt.preventDefault();
     switch (selected) {
       case "ResumoDeSistemas":
-        Navigate("/DKS/NewPost/NewResume");
+        Navigate("NewResume");
         break;
       case "Debates":
-        Navigate("/DKS/NewPost/NewDebate");
+        Navigate("NewDebate");
         break;
       case "Regrasdesistemas":
-        Navigate("/DKS/NewPost/NewRule");
+        Navigate("NewRule");
         break;
       case "PostsGerais":
-        Navigate("/DKS/NewPost/NewGeneral");
+        Navigate("NewGeneral");
         break;
       default:
         return alert(
@@ -34,7 +34,7 @@ const NewPost = () => {
   return (
     <>
       <Head tittle='Novo Post' />
-      <div className={`${styles.body} ${styles.colorDefault}`}>
+      <div className={`${styles.body} ${styles.colorDefault} ${styles.body2}`}>
         <h1 className="tittle">Qual o timpo de Post?</h1>
         <form className={styles.form} onSubmit={hamdleSubmit}>
           <ul>

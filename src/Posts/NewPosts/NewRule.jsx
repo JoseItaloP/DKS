@@ -4,16 +4,15 @@ import Button from "../../Elements/Button";
 import FileInput from "../../Elements/FileInput";
 import useFirebase from "../../Data/useFirebase";
 import useNewPost from "../../Data/useNewPost";
+import JoditEditorText from "../../Elements/JoditEditorText";
 
 import styles from "./styles/Default.module.css";
-import JoditEditorText from "../../Elements/JoditEditorText";
 
 const NewRule = () => {
   const { imgUrl, user, progress, NewPhoto, CancelNewPhoto } = useFirebase();
   const LocalS = localStorage.getItem("Logged");
   const [Logged, setLogged] = React.useState("");
   const [show, setShow] = React.useState(true);
-  const [imgFileUrl, setImgFileUrl] = React.useState("");
   const [erro, setErro] = React.useState("");
   const [joditContent, setJoditContent] = React.useState("");
   const [value, setValue] = React.useState({
@@ -44,8 +43,14 @@ const NewRule = () => {
   }, [Logged]);
 
   useEffect(() => {
+    const callToValue = () => {
+      setValue((prevValue) => ({
+        ...prevValue,
+        ImgUrl: imgUrl,
+      }));
+    };
     if (imgUrl) {
-      setImgFileUrl(imgUrl);
+      callToValue();
     }
   }, [imgUrl]);
 
@@ -74,10 +79,6 @@ const NewRule = () => {
     if (!Logged) {
       return alert("Faça login na página para continuar");
     }
-    setValue((prevValue) => ({
-      ...prevValue,
-      ImgUrl: imgFileUrl,
-    }));
     newElement(value);
   }
 
@@ -85,19 +86,22 @@ const NewRule = () => {
     evt.preventDefault();
     setShow(false);
 
-    const file = evt.target[0]?.files[0];
-    if (!file) return;
-    if (file) NewPhoto(file);
+    if (value.TituloP) {
+      const file = evt.target[0]?.files[0];
+      if (!file) return;
+      if (file) NewPhoto(file, `${value.TituloP}_${user.id}`);
+    } else {
+      window.alert("Preencha o titulo do post para proceguir");
+    }
   }
 
   function CancelIMG() {
     CancelNewPhoto();
     setShow(true);
-    setImgFileUrl("");
   }
   return (
     <>
-      <div className={styles.body}>
+      <div className={`${styles.body} ${styles.body2}`}>
         <h1 className={` tittle ${styles.colorDefault}`}>
           Novo Post de Regra de Sistema
         </h1>
